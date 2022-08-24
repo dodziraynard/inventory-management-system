@@ -15,12 +15,18 @@ namespace Inventory
         [STAThread]
         static void Main()
         {
+<<<<<<< HEAD
             User hrd = new User("Raynard", "sompass");
             Console.WriteLine(hrd.Username);
 
             //Application.EnableVisualStyles();
             //Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Form1());
+=======
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new Login());
+>>>>>>> e645fdc5fd54b951d48625ea1e9ac4150b645ed9
         }
     }
 }
