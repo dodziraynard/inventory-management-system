@@ -35,10 +35,6 @@ namespace Inventory
             string username = usernameInput.Text;
             string password = passwordInput.Text;
             connection.Open();
-
-            //var query = "INSERT INTO users(username, firstName,other_names,password) VALUES('hrd','Raynard','Dodzi','hotpass')";
-
-            //var res = conn.Execute(query);
             try
             {
                 var user = connection.QueryFirst<User>($"SELECT * FROM users where username='{username}'");
