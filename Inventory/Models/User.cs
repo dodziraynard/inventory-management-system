@@ -5,6 +5,12 @@ namespace Inventory.Models
     {
         public string Username { set; get; }
         public string Password { set; get; }
+        public string FirstName { set; get; }
+        public string OtherNames { set; get; }
+        public int Id { set; get; }
+        public string IsActive { set; get; }
+        public string IsAdmin { set; get; }
+
 
         public User(string username, string password)
         {
