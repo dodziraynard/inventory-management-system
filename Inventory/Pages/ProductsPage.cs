@@ -3,9 +3,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Windows.Forms;
-
-namespace Inventory.Pages
-{
+ 
+namespace Inventory.Pages{
     public partial class ProductsPage : UserControl
     {
         public Product currentProduct = null;
@@ -41,7 +40,7 @@ namespace Inventory.Pages
                 row.Add(product.Name);
                 row.Add(product.Price);
                 row.Add(product.Quantity);
-                row.Add(product.CategoryId);
+                row.Add(product.CategoryName);
                 dataGridView.Rows.Add(row.ToArray());
             }
 

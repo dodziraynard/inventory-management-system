@@ -78,11 +78,24 @@
     <Compile Include="Components\TitleBar.Designer.cs">
       <DependentUpon>TitleBar.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\CategoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\CategoryForm.Designer.cs">
+      <DependentUpon>CategoryForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainScreen.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainScreen.Designer.cs">
       <DependentUpon>MainScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Category.cs" />
+    <Compile Include="Pages\CategoryPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pages\CategoryPage.Designer.cs">
+      <DependentUpon>CategoryPage.cs</DependentUpon>
     </Compile>
     <Compile Include="Pages\DashboardPage.cs">
       <SubType>UserControl</SubType>
@@ -102,16 +115,22 @@
     <Compile Include="Pages\ProductsPage.Designer.cs">
       <DependentUpon>ProductsPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProductForm.cs">
+    <Compile Include="forms\ProductForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ProductForm.Designer.cs">
+    <Compile Include="forms\ProductForm.Designer.cs">
       <DependentUpon>ProductForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Components\TitleBar.resx">
       <DependentUpon>TitleBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\CategoryForm.resx">
+      <DependentUpon>CategoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\CategoryPage.resx">
+      <DependentUpon>CategoryPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\DashboardPage.resx">
       <DependentUpon>DashboardPage.cs</DependentUpon>
@@ -125,7 +144,7 @@
     <EmbeddedResource Include="Pages\ProductsPage.resx">
       <DependentUpon>ProductsPage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProductForm.resx">
+    <EmbeddedResource Include="forms\ProductForm.resx">
       <DependentUpon>ProductForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -219,5 +238,6 @@
   <ItemGroup>
     <None Include="Resources\reload1.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

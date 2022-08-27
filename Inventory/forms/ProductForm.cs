@@ -1,6 +1,7 @@
 ﻿using Inventory.Models;
 using Inventory.Pages;
 using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace Inventory
@@ -8,25 +9,42 @@ namespace Inventory
     public partial class ProductForm : Form
     {
         public Product currentProduct = null;
+        private List<Category> categories;
 
         public ProductForm()
         {
             InitializeComponent();
             currentProduct = ProductsPage.instance?.currentProduct;
+            categories = Category.GetAllCategories();
 
-            if(currentProduct != null)
+            if (currentProduct != null)
             {
                 nameInput.Text = currentProduct.Name;
                 priceInput.Value = currentProduct.Price;
                 quantityInput.Value = currentProduct.Quantity;
             }
+            else
+            {
+                deleteButton.Visible = false;
+            }
+
+            // Populate the category combo box.
+            for (int i = 0; i < categories.Count; i++)
+            {
+                Category category = categories[i];
+                categoryInput.Items.Add(category.Name);
+            }
+            if (currentProduct != null)
+            {
+                categoryInput.SelectedItem = currentProduct.CategoryName;
+            }
+
         }
         private void saveButton_Click(object sender, EventArgs e)
         {
             string name = nameInput.Text;
             decimal price = priceInput.Value;
             int quantity = (int) quantityInput.Value;
-            int categorId = 1;
 
             if (name.Equals(""))
             {
@@ -35,7 +53,8 @@ namespace Inventory
             }
 
             int affectedRow = -1;
-            Product product = new Product(name, price, quantity, categorId);
+            string categoryName = categoryInput.SelectedItem.ToString();
+            Product product = new Product(name, price, quantity, categoryName);
             if (currentProduct != null)
             {
                 product.Id = currentProduct.Id;

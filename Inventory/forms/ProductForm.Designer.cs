@@ -39,8 +39,8 @@ namespace Inventory
             this.label4 = new System.Windows.Forms.Label();
             this.categoryInput = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.saveButton = new System.Windows.Forms.Button();
             this.deleteButton = new System.Windows.Forms.Button();
+            this.saveButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.priceInput)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.quantityInput)).BeginInit();
@@ -180,6 +180,19 @@ namespace Inventory
             this.panel1.Size = new System.Drawing.Size(776, 100);
             this.panel1.TabIndex = 1;
             // 
+            // deleteButton
+            // 
+            this.deleteButton.Dock = System.Windows.Forms.DockStyle.Left;
+            this.deleteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deleteButton.Location = new System.Drawing.Point(20, 20);
+            this.deleteButton.Margin = new System.Windows.Forms.Padding(3, 3, 20, 3);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Size = new System.Drawing.Size(225, 60);
+            this.deleteButton.TabIndex = 1;
+            this.deleteButton.Text = "Delete";
+            this.deleteButton.UseVisualStyleBackColor = true;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
+            // 
             // saveButton
             // 
             this.saveButton.BackColor = System.Drawing.SystemColors.MenuHighlight;
@@ -194,19 +207,6 @@ namespace Inventory
             this.saveButton.Text = "Save";
             this.saveButton.UseVisualStyleBackColor = false;
             this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
-            // 
-            // deleteButton
-            // 
-            this.deleteButton.Dock = System.Windows.Forms.DockStyle.Left;
-            this.deleteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.deleteButton.Location = new System.Drawing.Point(20, 20);
-            this.deleteButton.Margin = new System.Windows.Forms.Padding(3, 3, 20, 3);
-            this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(225, 60);
-            this.deleteButton.TabIndex = 1;
-            this.deleteButton.Text = "Delete";
-            this.deleteButton.UseVisualStyleBackColor = true;
-            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
             // ProductForm
             // 

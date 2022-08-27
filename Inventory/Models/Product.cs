@@ -13,7 +13,7 @@ namespace Inventory.Models
         public string Name { set; get; }
         public decimal Price { set; get; }
         public int Quantity { set; get; }
-        public int CategoryId { set; get; }
+        public string CategoryName { set; get; }
 
         private MySqlConnection connection;
 
@@ -21,12 +21,12 @@ namespace Inventory.Models
         {
             connection = new DBConnection().GetConnection();
         }
-        public Product(string name, decimal price, int quantity, int categoryId)
+        public Product(string name, decimal price, int quantity, string categoryName)
         {
             Name = name;
             Price = price;
             Quantity = quantity;
-            CategoryId = categoryId;
+            CategoryName = categoryName;
 
             connection = new DBConnection().GetConnection();
         }
@@ -34,13 +34,13 @@ namespace Inventory.Models
         public int insertProduct()
         {
             string query = 
-                $"INSERT INTO products (Name, Price,Quantity,CategoryId) VALUES('{this.Name}','{this.Price}','{this.Quantity}','{this.CategoryId}')";
+                $"INSERT INTO products (Name,Price,Quantity,CategoryName) VALUES('{this.Name}','{this.Price}','{this.Quantity}','{this.CategoryName}')";
             return connection.Execute(query);
         }
 
         public int updateProduct()
         {
-            string query = $"UPDATE `products` SET `Name`='{this.Name}',`Price`='{this.Price}',`Quantity`='{this.Quantity}',`CategoryId`='{this.CategoryId}' WHERE `Id`={this.Id}";
+            string query = $"UPDATE `products` SET `Name`='{this.Name}',`Price`='{this.Price}',`Quantity`='{this.Quantity}',`CategoryName`='{this.CategoryName}' WHERE `Id`={this.Id}";
             return connection.Execute(query);
         }
 
