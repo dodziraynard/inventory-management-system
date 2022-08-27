@@ -27,20 +27,12 @@ namespace Inventory
         {
             string username = usernameInput.Text;
             string password = passwordInput.Text;
-            connection.Open();
-            try
+            User user = User.getUserByUsername(username);
+            if(user != null && user.Authenticate(password) && user.IsActive==1)
             {
-                var user = connection.QueryFirst<User>($"SELECT * FROM users where username='{username}'");
-                if (user.Password == password)
-                {
-                    Hide();
-                    MainScreen home = new MainScreen();
-                    home.Show(this);
-                }
-            }
-            catch (InvalidOperationException ex)
-            {
-               
+                Hide();
+                MainScreen home = new MainScreen();
+                home.Show(this);
             }
             errorMessageText.Text = "Invalid credentials.";
             connection.Close();

@@ -1,7 +1,7 @@
 ﻿
 namespace Inventory.Pages
 {
-    partial class ProductsPage
+    partial class UsersPage
     {
         /// <summary> 
         /// Required designer variable.
@@ -36,7 +36,7 @@ namespace Inventory.Pages
             this.searchButton = new System.Windows.Forms.Button();
             this.searchInput = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.addProductButton = new System.Windows.Forms.Button();
+            this.addUserButton = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.titleBar = new Inventory.Components.TitleBar();
             this.page.SuspendLayout();
@@ -57,8 +57,8 @@ namespace Inventory.Pages
             this.page.Dock = System.Windows.Forms.DockStyle.Fill;
             this.page.Location = new System.Drawing.Point(0, 0);
             this.page.Name = "page";
-            this.page.Size = new System.Drawing.Size(1106, 932);
-            this.page.TabIndex = 3;
+            this.page.Size = new System.Drawing.Size(1322, 1066);
+            this.page.TabIndex = 5;
             // 
             // panel4
             // 
@@ -67,7 +67,7 @@ namespace Inventory.Pages
             this.panel4.Location = new System.Drawing.Point(0, 260);
             this.panel4.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1106, 672);
+            this.panel4.Size = new System.Drawing.Size(1322, 806);
             this.panel4.TabIndex = 8;
             // 
             // dataGridView
@@ -84,7 +84,7 @@ namespace Inventory.Pages
             this.dataGridView.ReadOnly = true;
             this.dataGridView.RowHeadersWidth = 82;
             this.dataGridView.RowTemplate.Height = 33;
-            this.dataGridView.Size = new System.Drawing.Size(1106, 672);
+            this.dataGridView.Size = new System.Drawing.Size(1322, 806);
             this.dataGridView.TabIndex = 0;
             this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick);
             // 
@@ -96,7 +96,7 @@ namespace Inventory.Pages
             this.panel2.Location = new System.Drawing.Point(0, 180);
             this.panel2.Name = "panel2";
             this.panel2.Padding = new System.Windows.Forms.Padding(10);
-            this.panel2.Size = new System.Drawing.Size(1106, 80);
+            this.panel2.Size = new System.Drawing.Size(1322, 80);
             this.panel2.TabIndex = 7;
             // 
             // searchButton
@@ -122,25 +122,25 @@ namespace Inventory.Pages
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.addProductButton);
+            this.panel1.Controls.Add(this.addUserButton);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 80);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(20);
-            this.panel1.Size = new System.Drawing.Size(1106, 100);
+            this.panel1.Size = new System.Drawing.Size(1322, 100);
             this.panel1.TabIndex = 6;
             // 
-            // addProductButton
+            // addUserButton
             // 
-            this.addProductButton.Dock = System.Windows.Forms.DockStyle.Right;
-            this.addProductButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addProductButton.Location = new System.Drawing.Point(829, 20);
-            this.addProductButton.Name = "addProductButton";
-            this.addProductButton.Size = new System.Drawing.Size(257, 60);
-            this.addProductButton.TabIndex = 0;
-            this.addProductButton.Text = "Add Product";
-            this.addProductButton.UseVisualStyleBackColor = true;
-            this.addProductButton.Click += new System.EventHandler(this.addProductButton_Click);
+            this.addUserButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.addUserButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addUserButton.Location = new System.Drawing.Point(1045, 20);
+            this.addUserButton.Name = "addUserButton";
+            this.addUserButton.Size = new System.Drawing.Size(257, 60);
+            this.addUserButton.TabIndex = 0;
+            this.addUserButton.Text = "Add User";
+            this.addUserButton.UseVisualStyleBackColor = true;
+            this.addUserButton.Click += new System.EventHandler(this.addUserButton_Click);
             // 
             // panel3
             // 
@@ -150,7 +150,7 @@ namespace Inventory.Pages
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1106, 80);
+            this.panel3.Size = new System.Drawing.Size(1322, 80);
             this.panel3.TabIndex = 2;
             // 
             // titleBar
@@ -159,18 +159,17 @@ namespace Inventory.Pages
             this.titleBar.Location = new System.Drawing.Point(0, 0);
             this.titleBar.Name = "titleBar";
             this.titleBar.Padding = new System.Windows.Forms.Padding(15);
-            this.titleBar.Size = new System.Drawing.Size(1106, 80);
+            this.titleBar.Size = new System.Drawing.Size(1322, 80);
             this.titleBar.TabIndex = 4;
             // 
-            // ProductsPage
+            // UsersPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.Controls.Add(this.page);
-            this.Name = "ProductsPage";
-            this.Size = new System.Drawing.Size(1106, 932);
-            this.Load += new System.EventHandler(this.ProductsPage_Load);
+            this.Name = "UsersPage";
+            this.Size = new System.Drawing.Size(1322, 1066);
+            this.Load += new System.EventHandler(this.UsersPage_Load);
             this.page.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
@@ -185,14 +184,14 @@ namespace Inventory.Pages
         #endregion
 
         private System.Windows.Forms.Panel page;
-        private System.Windows.Forms.Panel panel3;
-        private Components.TitleBar titleBar;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button searchButton;
         private System.Windows.Forms.TextBox searchInput;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button addProductButton;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.DataGridView dataGridView;
+        private System.Windows.Forms.Button addUserButton;
+        private System.Windows.Forms.Panel panel3;
+        private Components.TitleBar titleBar;
     }
 }

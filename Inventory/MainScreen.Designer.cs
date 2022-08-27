@@ -37,14 +37,15 @@ namespace Inventory
             this.categoryPage = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.usersPage = new System.Windows.Forms.Button();
             this.Logout = new System.Windows.Forms.Button();
             this.mainPage = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.udtTypeHandlerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pageUsers = new Inventory.Pages.UsersPage();
             this.pageDashboard = new Inventory.DashboardPage();
             this.pageProducts = new Inventory.Pages.ProductsPage();
             this.pageCategory = new Inventory.Pages.CategoryPage();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.udtTypeHandlerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sidebar.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.mainPage.SuspendLayout();
@@ -70,7 +71,7 @@ namespace Inventory
             this.flowLayoutPanel1.Controls.Add(this.categoryPage);
             this.flowLayoutPanel1.Controls.Add(this.button3);
             this.flowLayoutPanel1.Controls.Add(this.button4);
-            this.flowLayoutPanel1.Controls.Add(this.button5);
+            this.flowLayoutPanel1.Controls.Add(this.usersPage);
             this.flowLayoutPanel1.Controls.Add(this.Logout);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
@@ -175,23 +176,25 @@ namespace Inventory
             this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button4.UseVisualStyleBackColor = false;
             // 
-            // button5
+            // usersPage
             // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button5.Image = global::Inventory.Properties.Resources.users;
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(3, 683);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(390, 130);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "Users";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button5.UseVisualStyleBackColor = false;
+            this.usersPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
+            this.usersPage.FlatAppearance.BorderSize = 0;
+            this.usersPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.usersPage.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usersPage.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.usersPage.Image = global::Inventory.Properties.Resources.users;
+            this.usersPage.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.usersPage.Location = new System.Drawing.Point(3, 683);
+            this.usersPage.Name = "usersPage";
+            this.usersPage.Size = new System.Drawing.Size(390, 130);
+            this.usersPage.TabIndex = 4;
+            this.usersPage.Tag = "users";
+            this.usersPage.Text = "Users";
+            this.usersPage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.usersPage.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.usersPage.UseVisualStyleBackColor = false;
+            this.usersPage.Click += new System.EventHandler(this.changePage);
             // 
             // Logout
             // 
@@ -217,12 +220,43 @@ namespace Inventory
             this.mainPage.Controls.Add(this.pageDashboard);
             this.mainPage.Controls.Add(this.pageProducts);
             this.mainPage.Controls.Add(this.pageCategory);
+            this.mainPage.Controls.Add(this.pageUsers);
             this.mainPage.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainPage.Location = new System.Drawing.Point(400, 0);
             this.mainPage.Margin = new System.Windows.Forms.Padding(0);
             this.mainPage.Name = "mainPage";
             this.mainPage.Size = new System.Drawing.Size(1434, 1090);
             this.mainPage.TabIndex = 1;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 400F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Controls.Add(this.sidebar, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.mainPage, 1, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1834, 1110);
+            this.tableLayoutPanel1.TabIndex = 7;
+            // 
+            // udtTypeHandlerBindingSource
+            // 
+            this.udtTypeHandlerBindingSource.DataSource = typeof(Dapper.SqlMapper.UdtTypeHandler);
+            // 
+            // pageUsers
+            // 
+            this.pageUsers.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pageUsers.Location = new System.Drawing.Point(0, 0);
+            this.pageUsers.Name = "pageUsers";
+            this.pageUsers.Size = new System.Drawing.Size(1434, 1090);
+            this.pageUsers.TabIndex = 3;
+            this.pageUsers.Tag = "users";
             // 
             // pageDashboard
             // 
@@ -252,27 +286,6 @@ namespace Inventory
             this.pageCategory.Size = new System.Drawing.Size(1434, 1090);
             this.pageCategory.TabIndex = 2;
             // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 400F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.sidebar, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.mainPage, 1, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1834, 1110);
-            this.tableLayoutPanel1.TabIndex = 7;
-            // 
-            // udtTypeHandlerBindingSource
-            // 
-            this.udtTypeHandlerBindingSource.DataSource = typeof(Dapper.SqlMapper.UdtTypeHandler);
-            // 
             // MainScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -299,7 +312,7 @@ namespace Inventory
         private System.Windows.Forms.Button categoryPage;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button usersPage;
         private System.Windows.Forms.Panel mainPage;
         private System.Windows.Forms.Button Logout;
         private System.Windows.Forms.Button homeButton;
@@ -308,5 +321,6 @@ namespace Inventory
         private Pages.ProductsPage pageProducts;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private Pages.CategoryPage pageCategory;
+        private Pages.UsersPage pageUsers;
     }
 }

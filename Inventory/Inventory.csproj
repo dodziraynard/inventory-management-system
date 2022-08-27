@@ -72,6 +72,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Components\CustomInput.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\CustomInput.Designer.cs">
+      <DependentUpon>CustomInput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\PasswordInput.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\PasswordInput.Designer.cs">
+      <DependentUpon>PasswordInput.cs</DependentUpon>
+    </Compile>
     <Compile Include="Components\TitleBar.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -83,6 +95,12 @@
     </Compile>
     <Compile Include="forms\CategoryForm.Designer.cs">
       <DependentUpon>CategoryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\UserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\UserForm.Designer.cs">
+      <DependentUpon>UserForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MainScreen.cs">
       <SubType>Form</SubType>
@@ -121,13 +139,28 @@
     <Compile Include="forms\ProductForm.Designer.cs">
       <DependentUpon>ProductForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pages\UsersPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pages\UsersPage.Designer.cs">
+      <DependentUpon>UsersPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Components\CustomInput.resx">
+      <DependentUpon>CustomInput.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\PasswordInput.resx">
+      <DependentUpon>PasswordInput.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Components\TitleBar.resx">
       <DependentUpon>TitleBar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\CategoryForm.resx">
       <DependentUpon>CategoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\UserForm.resx">
+      <DependentUpon>UserForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\CategoryPage.resx">
       <DependentUpon>CategoryPage.cs</DependentUpon>
@@ -146,6 +179,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\ProductForm.resx">
       <DependentUpon>ProductForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\UsersPage.resx">
+      <DependentUpon>UsersPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
