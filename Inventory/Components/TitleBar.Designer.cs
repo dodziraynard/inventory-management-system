@@ -40,7 +40,7 @@ namespace Inventory.Components
             this.titleText.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.titleText.Location = new System.Drawing.Point(15, 15);
             this.titleText.Name = "titleText";
-            this.titleText.Size = new System.Drawing.Size(329, 66);
+            this.titleText.Size = new System.Drawing.Size(895, 66);
             this.titleText.TabIndex = 2;
             this.titleText.Text = "DASHBOARD";
             // 

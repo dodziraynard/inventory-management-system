@@ -50,6 +50,13 @@ namespace Inventory.Pages{
             button.HeaderText = "Edit";
             button.UseColumnTextForButtonValue = true;
             dataGridView.Columns.Add(button);
+
+            DataGridViewButtonColumn saleButton = new DataGridViewButtonColumn();
+            saleButton.Name = "Sale";
+            saleButton.Text = "Sale";
+            saleButton.HeaderText = "Sale";
+            saleButton.UseColumnTextForButtonValue = true;
+            dataGridView.Columns.Add(saleButton);
         }
 
         private void reloadProducts()
@@ -87,11 +94,16 @@ namespace Inventory.Pages{
         private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             var senderGrid = (DataGridView)sender;
-            if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
-                e.RowIndex >= 0)
+            if (e.RowIndex >= 0)
             {
                 currentProduct = products.ToArray()[(e.RowIndex)];
-                navigateToProductFormPage();
+                if (senderGrid.Columns[e.ColumnIndex].Name == "Edit")
+                {
+                    navigateToProductFormPage();
+                } else if(senderGrid.Columns[e.ColumnIndex].Name == "Sale")
+                {
+
+                }
             }
         }
 
